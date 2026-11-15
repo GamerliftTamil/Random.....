@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#fff0f2">
+<title>A Little Surprise for Ramya</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Caveat:wght@500;600&display=swap');
+:root{--pink:#f8dce2;--rose:#b84f68;--wine:#713044;--cream:#fff9ef;--ink:#49333a;--sage:#87977d;--gold:#d7a75d}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff8f5;color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;overflow-x:hidden;padding-bottom:env(safe-area-inset-bottom)}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background-image:radial-gradient(#d58a9b 1px,transparent 1px);background-size:22px 22px;z-index:-1}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;border:0;touch-action:manipulation}
+.topbar{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px clamp(16px,5vw,70px);padding-top:calc(12px + env(safe-area-inset-top));background:#fff8f0ee;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid #f0dfe0}
+.brand{font-family:'Playfair Display',serif;color:var(--wine);font-size:1.1rem;white-space:nowrap}.brand span{color:var(--rose)}
+nav{display:flex;gap:16px;font-size:.84rem;color:#765d64}nav a{padding:6px 0}nav a:hover{color:var(--rose)}
+.hero{min-height:80vh;min-height:80svh;display:grid;place-items:center;text-align:center;padding:60px 20px 80px;position:relative;overflow:hidden;background:linear-gradient(145deg,#fff3f2,#fbe3e7 55%,#fff7e9)}
+.hero:before,.hero:after{content:"🌷";position:absolute;font-size:clamp(3.5rem,10vw,8rem);opacity:.22;transform:rotate(-18deg)}.hero:before{left:3%;bottom:6%}.hero:after{right:4%;top:8%;transform:rotate(18deg)}
+.hero>div{position:relative;z-index:1}
+.eyebrow{text-transform:uppercase;letter-spacing:.2em;font-size:.7rem;color:var(--rose);font-weight:700}
+h1,h2{font-family:'Playfair Display',serif;font-weight:600;color:var(--wine);line-height:1.1}
+h1{font-size:clamp(2.3rem,9vw,6.5rem);margin:16px 0 12px}h1 em{font-style:normal;color:var(--rose)}
+.hero p{max-width:540px;line-height:1.75;color:#806b70;margin:0 auto 26px}
+.primary,.secondary{padding:14px 24px;min-height:48px;border-radius:999px;background:var(--wine);color:#fff;box-shadow:0 8px 20px #71304426;transition:.2s}.primary:hover{transform:translateY(-2px)}.secondary{background:#fff;color:var(--wine);border:1px solid #edcbd2}
+.hero-stickers{display:flex;justify-content:center;gap:10px;margin-top:30px;flex-wrap:wrap}.sticker{background:#fffaf4;border:1px solid #f2dce0;border-radius:16px;padding:10px 14px;box-shadow:0 7px 20px #7130440d;font-size:.85rem}
+section{padding:72px clamp(16px,7vw,100px);max-width:1250px;margin:auto}.section-head{text-align:center;margin-bottom:32px}.section-head h2{font-size:clamp(2rem,6vw,3.5rem);margin:10px 0}.section-head p{color:#8a7479;line-height:1.7;max-width:520px;margin:0 auto}
+.ribbon-wrap{max-width:720px;margin:auto;background:linear-gradient(135deg,#fff,#fff5ed);border:1px solid #f0d8d8;border-radius:28px;padding:30px 22px;text-align:center;box-shadow:0 20px 55px #71304412}
+.ribbon{font-size:3.5rem;display:block;margin:6px}.ribbon-wrap h3{font-family:'Playfair Display',serif;color:var(--wine);font-size:1.6rem;margin:8px}
+.reveal,.conf{display:none}.reveal.show,.conf.show{display:block;animation:pop .45s ease}
+.reveal{margin:22px auto 0;max-width:560px}
+@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
+.memories{background:#fff0f2;border-radius:34px;padding:56px clamp(14px,5vw,55px)}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:950px;margin:auto}
+.memory-box{min-height:145px;background:#fffdfb;padding:14px 12px 10px;border:1px solid #f1dfe1;border-radius:17px;box-shadow:0 12px 28px #71304412;transform:rotate(var(--rot));transition:.25s;display:flex;flex-direction:column;align-items:center;gap:6px}.memory-box:hover{transform:rotate(0) translateY(-4px)}.memory-box span{font-size:1.1rem;color:var(--rose)}
+.memory-box textarea{width:100%;flex:1 0 auto;min-height:84px;resize:none;overflow:hidden;border:0;outline:0;background:transparent;text-align:center;color:#79535e;font:500 1.3rem 'Caveat',cursive;line-height:1.3}.memory-box textarea::placeholder{color:#b18b94;opacity:1}
+.letter{background:#fffdf7;border:1px solid #eadcc9;border-radius:8px;padding:clamp(24px,5vw,44px) clamp(20px,5vw,44px);box-shadow:0 18px 40px #6b4a3512;position:relative;text-align:left;margin:22px auto 0}
+.letter:before{content:"";position:absolute;inset:8px;border:1px solid #f0e4d4;pointer-events:none}
+.letter h3{font-family:'Caveat',cursive;font-size:2rem;color:var(--rose);margin:0 0 12px;position:relative}.letter p{line-height:1.85;color:#75656a;position:relative;margin:0 0 14px;overflow-wrap:anywhere}.letter .sign{font-family:'Caveat',cursive;font-size:1.7rem;color:var(--wine);margin-bottom:0}
+.note{margin:22px auto 0;padding:20px;border-radius:18px;background:#fff0f2;max-width:520px}.note h3{font-family:'Playfair Display',serif;color:var(--wine);margin:8px 0;font-size:1.3rem}.note p{margin:0;color:#806b70;line-height:1.8}
+.confbtn{margin-top:26px;width:100%;max-width:340px}
+.conf{margin-top:8px}
+.ask{text-align:center;margin-top:26px}.ask h3{font-family:'Playfair Display',serif;color:var(--wine);font-size:1.4rem;line-height:1.3;margin:0 0 6px}
+.arena{position:relative;height:130px;max-width:420px;margin:10px auto 0}
+.arena button{position:absolute;min-width:104px;transition:left .3s,top .3s}
+#yes{background:var(--rose)}
+.yay{display:none;margin-top:22px;padding:22px;border-radius:18px;background:#fff0f2;color:#744454;line-height:1.8}.yay.show{display:block;animation:pop .45s ease}
+.surprise{background:linear-gradient(140deg,#f8e0e5,#fff2df);border-radius:32px;text-align:center;padding:52px 18px}
+.surprise h2{font-size:clamp(2.1rem,6vw,3.7rem)}.gift{font-size:4.5rem;display:block;margin:12px}
+footer{text-align:center;padding:30px 20px calc(30px + env(safe-area-inset-bottom));color:#9b7e85;font-size:.82rem;line-height:1.6}.footer-flower{color:var(--rose)}
+.modal{position:fixed;inset:0;background:#3d2530a8;display:none;place-items:center;padding:20px;z-index:50;overflow-y:auto}.modal.show{display:grid}.modal-box{background:#fff8f2;border-radius:26px;padding:30px 24px;max-width:430px;width:100%;text-align:center;box-shadow:0 20px 70px #0003}.modal-box h2{font-size:2rem;margin:8px 0}.modal-box p{line-height:1.7;color:#806b70}
+.petal{position:fixed;top:-30px;z-index:60;pointer-events:none;animation:fall linear forwards;opacity:.75}@keyframes fall{to{transform:translateY(110vh) rotate(500deg);opacity:0}}
+@media(max-width:760px){.gallery{grid-template-columns:1fr 1fr;gap:14px}.memories{border-radius:26px;margin:0 8px}section{padding:52px 16px}.hero{padding:48px 18px 70px}}
+@media(max-width:430px){nav{gap:12px;font-size:.78rem}.brand{font-size:1rem}.memory-box{min-height:140px;padding:12px 10px}.hero-stickers{gap:8px}.sticker{font-size:.8rem;padding:8px 12px}.hero .primary,.ribbon-wrap .primary{width:100%}.ribbon-wrap{padding:26px 16px;border-radius:24px}.letter p{font-size:1rem}.surprise{border-radius:24px}}
+button:focus-visible,textarea:focus-visible,a:focus-visible{outline:2px solid var(--rose);outline-offset:3px}.memory-box:focus-within{background:#fff;border-color:#e2aab6}
+@media(hover:none){.memory-box:hover{transform:rotate(var(--rot))}.primary:hover{transform:none}}
+@media(max-width:340px){.gallery{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="#">little things <span>✿</span></a><nav><a href="#ribbon">Surprise</a><a href="#memories">Memories</a></nav></header>
+<main>
+<section class="hero">
+  <div><div class="eyebrow">a tiny corner of happiness, for Ramya</div><h1>For my favourite<br><em>human.</em></h1>
+  <p>Some people make ordinary days feel a little brighter. This tiny page is a reminder that you’re appreciated, celebrated, and very much stuck with me.</p>
+  <button class="primary" onclick="document.querySelector('#ribbon').scrollIntoView({behavior:'smooth'})">Open your little surprise</button>
+  <div class="hero-stickers"><span class="sticker">a bunch of tulips</span><span class="sticker">emergency chocolate</span><span class="sticker">endless good wishes</span></div></div>
+</section>
+<section id="ribbon">
+ <div class="section-head"><div class="eyebrow">something small, just for you</div><h2>Your letter is waiting</h2><p>Pull the ribbon to open your letter. Read it alone if you can.</p></div>
+ <div class="ribbon-wrap"><span class="ribbon">🎀</span><h3>One tiny reminder…</h3><p style="color:#987f84;margin:0 0 18px">Tap the button to unwrap a little appreciation.</p><button class="primary" id="unwrap">Pull the ribbon</button>
+ <div class="reveal" id="reveal">
+   <div class="eyebrow">a little note, just for you</div>
+   <article class="letter">
+    <h3>Hey Amiyee,</h3>
+    <p>This is just a letter for u, so read it alone if u can.</p>
+    <p>I understand how ur feeling… everything feels sudden or overwhelming, everything is going on in ur mind, and u cried. Im here for You, parents might scold but they love youu. U wanted to join volleyball la, so lets do something to make them agree. All the issues will fade and everything you want will happen. Lets make them happen!!</p>
+    <p>ik today was a bit bad and down , But im sorry that u felt down and cried.... Cy out if u want but ur not alone ! Realx and calm down . things are just not perfector what we want rn that doesnt mean it wont get better ! it will be better</p>
+    <p>I hope you understand how important and apprecitated YOU aree, thanks for listening to my yaps, being suppotive and the silly ragebaiting and random late night conversations &gt;&gt;&gt;&gt;&gt; Sooo yeahh Amiyeee! Smileee dont worry everything will be alrighttt!!</p>
+    <p>If you feel down, text me, close your eyes, take deep breaths, relaxxx and keep yourself freee. Your my one and only priority. Im sooo really sorry for the times i couldnt talk to you properly or slept or had to go butt im always thinking about u and ur everything, sooo be happy.</p>
+    <p>Also, be proud of yourself for how far you’ve come, even on the days it doesnt feel like it. UR PERFECT and UR the besttt!! 🫠</p>
+    <p class="sign">Your friend,<br>Pranay Aby</p>
+   </article>
+   <div class="note">
+    <h3>You are appreciated. Always.</h3>
+    <p>Not just today. Not just because there’s a little surprise here. Just because you’re you.</p>
+   </div>
+   <button class="primary confbtn" id="confBtn">Wanna hear my confession?</button>
+   <div class="conf" id="conf">
+    <article class="letter">
+     <h3>Oii Amiyeee!!!!</h3>
+     <p>Even when the day kills me, when im crying, laughing and busy, im always thinking abt You! I wanna be there for you till the end through good and bad days! Laugh and cry with You. I Love You Amiyee, like how ur eyes make me dizzy, ur smile is an addiction and ur voice is God’s blessing.</p>
+     <p>Your my comfort zone, the one i wanna talk to all day. I Will take care Yar so dont think abt something. Be Yourself cause i LOVE YOU, not the perfect version, not the all okay type, but You for who U r. Say anything You want to because im all earss.</p>
+     <p class="sign" style="margin:0">I Love you Amiyee 🫠</p>
+    </article>
+    <div class="ask">
+     <h3>Will you be with me forever if we remove all the issues??? Plsssss……</h3>
+     <div class="arena" id="arena">
+      <button class="primary" id="yes">Yes</button>
+      <button class="secondary" id="no">No</button>
+     </div>
+     <div class="yay" id="yay"><strong style="font-family:'Playfair Display',serif;font-size:1.3rem;color:#713044">Yaaay!! Knew it.</strong><p style="margin:8px 0 0">Thank u for being u, Amiyee. Always here. Always.</p></div>
+    </div>
+   </div>
+  </div></div>
+</section>
+<section id="memories" class="memories">
+  <div class="section-head"><div class="eyebrow">the little moments</div><h2>Our memory garden</h2><p>A few little moments worth keeping close. Tap any box to edit it or add more.</p></div>
+  <div class="gallery" id="gallery">
+   <div class="memory-box" style="--rot:-2deg"><span>✿</span><textarea aria-label="Memory 1">The time you scolded me and we wanted to be strangers</textarea></div>
+   <div class="memory-box" style="--rot:1.5deg"><span>✿</span><textarea aria-label="Memory 2">Oct 15</textarea></div>
+   <div class="memory-box" style="--rot:-1deg"><span>✿</span><textarea aria-label="Memory 3">8th Independence Day in the stairs</textarea></div>
+   <div class="memory-box" style="--rot:2deg"><span>✿</span><textarea aria-label="Memory 4">Handball days</textarea></div>
+   <div class="memory-box" style="--rot:-1.5deg"><span>✿</span><textarea aria-label="Memory 5">The first day I texted you</textarea></div>
+   <div class="memory-box" style="--rot:1deg"><span>✿</span><textarea aria-label="Memory 6">Every time you said ily</textarea></div>
+   <div class="memory-box" style="--rot:-2deg"><span>✿</span><textarea aria-label="Memory 7">Nights I wanted you to listen and I talked to you</textarea></div>
+   <div class="memory-box" style="--rot:1.5deg"><span>✿</span><textarea aria-label="Memory 8">Every detail you shared with me</textarea></div>
+   <div class="memory-box" style="--rot:-1deg"><span>✿</span><textarea aria-label="Memory 9">Just the time we spent together</textarea></div>
+   <div class="memory-box" style="--rot:2deg"><span>✿</span><textarea aria-label="Memory 10">VR mall</textarea></div>
+   <div class="memory-box" style="--rot:-1.5deg"><span>✿</span><textarea aria-label="Memory 11">The last day we walked together in the stairs and outside</textarea></div>
+   <div class="memory-box" style="--rot:-1deg"><span>✿</span><textarea aria-label="Add a memory" placeholder="Add one more memory..."></textarea></div>
+  </div>
+</section>
+<section>
+ <div class="surprise"><div class="eyebrow">one last thing</div><h2>A pocketful<br>of happy things.</h2><span class="gift">🎁</span><p style="color:#806b70;line-height:1.8">A bouquet of tulips, a lifetime supply of chocolate, and dandelion wishes for every dream you’re keeping.</p><button class="primary" id="finalGift">One more little surprise</button></div>
+</section>
+</main>
+<footer>Made by Pranay Aby for Ramya, with <span class="footer-flower">✿</span> tulips, chocolate &amp; a whole lot of friendship.</footer>
+<div class="modal" id="modal"><div class="modal-box"><h2>You are appreciated!</h2><p>May your days be full of tiny joys, good surprises, loyal friends, and chocolate that never runs out.</p><button class="primary" id="closeModal">Aww, thank you!</button></div></div>
+<script>
+const $=s=>document.querySelector(s);
+const fit=t=>{t.style.height='auto';t.style.height=t.scrollHeight+'px'};
+document.querySelectorAll('.memory-box textarea').forEach(t=>{fit(t);t.addEventListener('input',()=>fit(t))});
+const fitAll=()=>document.querySelectorAll('.memory-box textarea').forEach(fit);addEventListener('load',fitAll);addEventListener('resize',fitAll);if(document.fonts)document.fonts.ready.then(fitAll);
+function petals(n){for(let i=0;i<n;i++){let p=document.createElement('span');p.className='petal';p.textContent=['🌸','🌷','✿'][Math.floor(Math.random()*3)];p.style.left=Math.random()*95+'vw';p.style.animationDuration=(3+Math.random()*4)+'s';p.style.fontSize=(14+Math.random()*18)+'px';document.body.appendChild(p);setTimeout(()=>p.remove(),7500)}}
+const look=(el,b='center')=>setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:b}),180);
+$('#unwrap').addEventListener('click',()=>{$('#reveal').classList.add('show');$('#unwrap').textContent='Your letter is open';petals(18);look($('#reveal'),'start')});
+/* confession + dodging No button */
+const arena=$('#arena'),yes=$('#yes'),no=$('#no');let n=0,done=false;
+const put=(el,x,y)=>{el.style.left=x+'px';el.style.top=y+'px'};
+function setup(){const W=arena.clientWidth;put(yes,Math.max(0,W*.5-yes.offsetWidth-10),42);put(no,W*.5+10,42)}
+$('#confBtn').addEventListener('click',()=>{$('#confBtn').style.display='none';$('#conf').classList.add('show');setup();look($('#conf'),'start')});
+function dodge(e){
+ if(done)return;e.preventDefault();n++;
+ if(n>=5){done=true;no.textContent='Yes';no.className='primary';return}
+ if(n===3){const a=[yes.offsetLeft,yes.offsetTop],b=[no.offsetLeft,no.offsetTop];put(yes,...b);put(no,...a);return}
+ const W=arena.clientWidth,H=arena.clientHeight;let x,y;
+ for(let i=0;i<30;i++){x=Math.random()*(W-no.offsetWidth);y=Math.random()*(H-no.offsetHeight);
+  if(x+no.offsetWidth+8<yes.offsetLeft||x>yes.offsetLeft+yes.offsetWidth+8||y+no.offsetHeight+8<yes.offsetTop||y>yes.offsetTop+yes.offsetHeight+8)break}
+ put(no,x,y)}
+function yay(){arena.style.display='none';$('#yay').classList.add('show');petals(40);look($('#yay'))}
+no.addEventListener('touchstart',dodge,{passive:false});
+no.addEventListener('mouseenter',dodge);
+no.addEventListener('click',e=>done?yay():dodge(e));
+yes.addEventListener('click',yay);
+window.addEventListener('resize',()=>{if($('#conf').classList.contains('show')&&!done)setup()});
+$('#finalGift').onclick=()=>{$('#modal').classList.add('show');petals(28)};$('#closeModal').onclick=()=>$('#modal').classList.remove('show');$('#modal').addEventListener('click',e=>{if(e.target.id==='modal')$('#modal').classList.remove('show')});
+</script>
+</body></html>
